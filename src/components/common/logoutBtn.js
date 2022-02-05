@@ -1,5 +1,6 @@
 import { LogoutTwoTone } from "@mui/icons-material";
-import { Button, Tooltip } from "@mui/material";
+import { Tooltip, Avatar } from "@mui/material";
+import { red } from "@mui/material/colors";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/userLoginActions";
 
@@ -12,11 +13,12 @@ const LogoutBtn = () => {
 
   return (
     <Tooltip title="logout" enterDelay={700} enterNextDelay={700}>
-      <Button
-        variant="text"
-        startIcon={<LogoutTwoTone />}
+      <Avatar
         onClick={handleLogout}
-      />
+        sx={{ cursor: "pointer", bgcolor: red[400] }}
+      >
+        <LogoutTwoTone />
+      </Avatar>
     </Tooltip>
   );
 };
